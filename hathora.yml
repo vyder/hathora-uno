@@ -1,0 +1,43 @@
+types:
+  Color:
+    - RED
+    - GREEN
+    - YELLOW
+    - BLUE
+  Card:
+    color: Color
+    number: int
+  Player:
+    id: UserId
+    hand: Card[]
+  GameStatus:
+    - INITIALIZED
+    - IN_PROGRESS
+    - OVER
+  PlayerState:
+    players: UserId[]
+    hand: Card[]?
+    topOfPile: Card?
+    turn: UserId?
+    winner: UserId?
+    numCardsInDeck: int?
+  GameState:
+    status: GameStatus
+    players: Player[]
+    pile: Card[]
+    deck: Card[]
+    turn: int?
+    winner: UserId?
+
+methods:
+  joinGame:
+  startGame:
+  playCard:
+    card: Card
+  drawCard:
+
+auth:
+  anonymous: {}
+
+userState: PlayerState
+error: string
